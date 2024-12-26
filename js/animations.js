@@ -274,10 +274,6 @@ if (contactsLinks) {
     initNavigation(contactsLinks, 'contacts')
 }
 
-ScrollTrigger.normalizeScroll(true);
-
-
-
 
 
 const heroSvgs = document.querySelectorAll('.hero-svg');
@@ -347,131 +343,131 @@ gsap.to(gsap.utils.toArray('.hero-bottom-char'), {
 //         scrub: 1,
 //     }
 // })
-.to('.white-overlay', {
-    y: '0',
-    duration: 2,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,
-})
-.from('.spiral-image__wrap', {
-    zIndex: -2,
-})
-.to('.hero-s-wrap', {opacity: 0})
-.set('.about-s-wrap', {
-    opacity: 1,
-}, '<')
-if (window.innerWidth >= 768) {
-    mainTL
-        .to('.spiral-text', {
-            scale: 1,
-            width: '500%',
-            height: '500%',
-            rotate: 180,
-            duration: 10,
-            force3D: true,
-        })
-        .to('.spiral-text', {
-            opacity: 0,
-            duration: 10,
-            delay: 1,
-        }, '<');
-}
-// about tl
-let del = 0;
-if (windowWidth >= 768) {
-    del = 2;
-}
-mainTL
-.from('.about__inner-t', {
-    opacity: 0,
-    duration: 4,
-    delay: del,
-    // scale: 0.8
-}, '<')
-.from('.about__cards', {
-    opacity: 0,
-    duration: 4,
-    // scale: 0.8
-}, '<')
-.call(() => {
-    document.querySelectorAll(".about__card-num > span").forEach(function (element) {
-      var num = parseFloat(element.getAttribute("data-number"));
-      var split = (num + "").split(".");
-      var decimals = split.length > 1 ? split[1].length : 0;
+// .to('.white-overlay', {
+//     y: '0',
+//     duration: 2,
+//     borderTopLeftRadius: 0,
+//     borderTopRightRadius: 0,
+// })
+// .from('.spiral-image__wrap', {
+//     zIndex: -2,
+// })
+// .to('.hero-s-wrap', {opacity: 0})
+// .set('.about-s-wrap', {
+//     opacity: 1,
+// }, '<')
+// if (window.innerWidth >= 768) {
+//     mainTL
+//         .to('.spiral-text', {
+//             scale: 1,
+//             width: '500%',
+//             height: '500%',
+//             rotate: 180,
+//             duration: 10,
+//             force3D: true,
+//         })
+//         .to('.spiral-text', {
+//             opacity: 0,
+//             duration: 10,
+//             delay: 1,
+//         }, '<');
+// }
+// // about tl
+// let del = 0;
+// if (windowWidth >= 768) {
+//     del = 2;
+// }
+// mainTL
+// .from('.about__inner-t', {
+//     opacity: 0,
+//     duration: 4,
+//     delay: del,
+//     // scale: 0.8
+// }, '<')
+// .from('.about__cards', {
+//     opacity: 0,
+//     duration: 4,
+//     // scale: 0.8
+// }, '<')
+// .call(() => {
+//     document.querySelectorAll(".about__card-num > span").forEach(function (element) {
+//       var num = parseFloat(element.getAttribute("data-number"));
+//       var split = (num + "").split(".");
+//       var decimals = split.length > 1 ? split[1].length : 0;
 
-      var zero = { val: 0 };
-      gsap.to(zero, {
-        val: num,
-        duration: 1.5,
-        ease: "power4.out",
-        onUpdate: function () {
-          element.textContent = zero.val.toFixed(decimals);
-        }
-      });
-    });
-  }, null, '<')
-//   services tl
-  .to('.about__overlay', {
-    y: 0,
-    opacity: 1,
-    duration: 4,
-})
-.to('.about__inner', {
-    scale: 0.8,
-    duration: 4
-}, '<')
-.to('.about-s-wrap', {opacity: 0, duration: 0.5})
-.to('.services-s-wrap', {opacity: 1, duration: 1.5}, '<')
-  allItems.forEach((item, index) => {
-    const isLast = index === allItems.length - 1;
-    mainTL.to(
-        item,
-        {
-            y: 0,
-            scale: 1.5,
-            opacity: 1,
-            filter: 'blur(0px)',
-            duration: animationDuration,
-        },
-        `step-${index}`
-    );
-    mainTL.to(
-        paragraphs[index],
-        {
-            opacity: 1,
-            duration: animationDuration,
-        },
-        `step-${index}`
-    );
-    if (index > 0) {
-        mainTL.to(
-            allItems[index - 1],
-            {
-                y: -step,
-                scale: 1,
-                filter: 'blur(3px)',
-                opacity: 0,
-                duration: animationDuration,
-            },
-            `step-${index}`
-        );
-        mainTL.to(
-            paragraphs[index - 1],
-            {
-                opacity: 0,
-                duration: animationDuration,
-            },
-            `step-${index}`
-        );
-    }
-    if (!isLast) {
-        mainTL.to(
-            allItems[index + 1],
-            {
-                opacity: 1,
-                duration: animationDuration,
-            },
-            `step-${index}`
-        );
-    }
-});
+//       var zero = { val: 0 };
+//       gsap.to(zero, {
+//         val: num,
+//         duration: 1.5,
+//         ease: "power4.out",
+//         onUpdate: function () {
+//           element.textContent = zero.val.toFixed(decimals);
+//         }
+//       });
+//     });
+//   }, null, '<')
+// //   services tl
+//   .to('.about__overlay', {
+//     y: 0,
+//     opacity: 1,
+//     duration: 4,
+// })
+// .to('.about__inner', {
+//     scale: 0.8,
+//     duration: 4
+// }, '<')
+// .to('.about-s-wrap', {opacity: 0, duration: 0.5})
+// .to('.services-s-wrap', {opacity: 1, duration: 1.5}, '<')
+//   allItems.forEach((item, index) => {
+//     const isLast = index === allItems.length - 1;
+//     mainTL.to(
+//         item,
+//         {
+//             y: 0,
+//             scale: 1.5,
+//             opacity: 1,
+//             filter: 'blur(0px)',
+//             duration: animationDuration,
+//         },
+//         `step-${index}`
+//     );
+//     mainTL.to(
+//         paragraphs[index],
+//         {
+//             opacity: 1,
+//             duration: animationDuration,
+//         },
+//         `step-${index}`
+//     );
+//     if (index > 0) {
+//         mainTL.to(
+//             allItems[index - 1],
+//             {
+//                 y: -step,
+//                 scale: 1,
+//                 filter: 'blur(3px)',
+//                 opacity: 0,
+//                 duration: animationDuration,
+//             },
+//             `step-${index}`
+//         );
+//         mainTL.to(
+//             paragraphs[index - 1],
+//             {
+//                 opacity: 0,
+//                 duration: animationDuration,
+//             },
+//             `step-${index}`
+//         );
+//     }
+//     if (!isLast) {
+//         mainTL.to(
+//             allItems[index + 1],
+//             {
+//                 opacity: 1,
+//                 duration: animationDuration,
+//             },
+//             `step-${index}`
+//         );
+//     }
+// });
