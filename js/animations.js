@@ -88,16 +88,16 @@ gsap.to(gsap.utils.toArray('.hero-bottom-char'), {
 }, '<')
 
 // hero tl
-const mainTL = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.HAS-wrap',
-        start: 'top top',
-        end: `+=${windowHeight * 6}`,
-        // end: `+=${1000}`,
-        pin: true,
-        scrub: 1,
-    }
-})
+// const mainTL = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: '.HAS-wrap',
+//         start: 'top top',
+//         end: `+=${windowHeight * 6}`,
+//         // end: `+=${1000}`,
+//         pin: true,
+//         scrub: 1,
+//     }
+// })
 .to('.white-overlay', {
     y: '0',
     duration: 2,
@@ -107,7 +107,6 @@ const mainTL = gsap.timeline({
 .from('.spiral-image__wrap', {
     zIndex: -2,
 })
-// .to('.hero-s-wrap', {opacity: 0}, '<')
 .to('.hero-s-wrap', {opacity: 0})
 .set('.about-s-wrap', {
     opacity: 1,
