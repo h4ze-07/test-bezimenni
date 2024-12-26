@@ -248,7 +248,7 @@ body {
 	top: 0;
     transform: translateY(-100%);
 	z-index: 100;
-	mix-blend-mode: difference;
+	/* mix-blend-mode: difference; */
 }
 .header__inner {
 	display: flex;
