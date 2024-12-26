@@ -1428,3 +1428,8 @@ body {
 .hero {
     overflow: hidden;
 }
+
+.services-s-wrap,
+.about-s-wrap {
+    opacity: 0;
+}

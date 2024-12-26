@@ -54,9 +54,6 @@ function heroTextAppear() {
 }
 heroTextAppear()
 
-gsap.set('.about-s-wrap', {opacity: 0})
-gsap.set('.services-s-wrap', {opacity: 0})
-
 const allItems = document.querySelectorAll('.services-list__item');
 const paragraphs = document.querySelectorAll('.services__b-wrap p');
 
