@@ -469,6 +469,8 @@ if (contactsLinks) {
     initNavigation(contactsLinks, 'contacts')
 }
 
-// lenis.on("scrollEnd", () => {
-// 	verticalSort()
-// });
+lenis.on("scrollEnd", () => {
+	verticalSort()
+});
+
+ScrollTrigger.normalizeScroll(true);
