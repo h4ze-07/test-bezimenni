@@ -68,7 +68,7 @@ if (windowWidth <= 768) {
     step = 80;
 }
 
-const animationDuration = 1;
+const animationDuration = 2;
 
 gsap.set(allItems, { opacity: 0, y: step });
 gsap.set(paragraphs, { opacity: 0 });
@@ -89,7 +89,7 @@ const mainTL = gsap.timeline({
     scrollTrigger: {
         trigger: '.HAS-wrap',
         start: 'top top',
-        end: `+=${windowHeight * 3}`,
+        end: `+=${windowHeight * 4}`,
         // end: `+=${1000}`,
         pin: true,
         scrub: 1,
@@ -97,6 +97,7 @@ const mainTL = gsap.timeline({
 })
 .to('.white-overlay', {
     y: '0',
+    duration: 2,
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
 })
@@ -114,9 +115,11 @@ if (window.innerWidth >= 768) {
             width: '500%',
             height: '500%',
             rotate: 180,
+            duration: 5,
         })
         .to('.spiral-text', {
             opacity: 0,
+            duration: 5,
             delay: 1,
         }, '<');
 }
@@ -128,11 +131,13 @@ if (windowWidth >= 768) {
 mainTL
 .from('.about__inner-t', {
     opacity: 0,
+    duration: 4,
     delay: del,
     // scale: 0.8
 }, '<')
 .from('.about__cards', {
     opacity: 0,
+    duration: 4,
     // scale: 0.8
 }, '<')
 .call(() => {
@@ -144,6 +149,7 @@ mainTL
       var zero = { val: 0 };
       gsap.to(zero, {
         val: num,
+        duration: 1.5,
         ease: "power4.out",
         onUpdate: function () {
           element.textContent = zero.val.toFixed(decimals);
@@ -155,12 +161,14 @@ mainTL
   .to('.about__overlay', {
     y: 0,
     opacity: 1,
+    duration: 4,
 })
 .to('.about__inner', {
     scale: 0.8,
+    duration: 4
 }, '<')
-.to('.about-s-wrap', {opacity: 0})
-.to('.services-s-wrap', {opacity: 1}, '<')
+.to('.about-s-wrap', {opacity: 0, duration: 0.5})
+.to('.services-s-wrap', {opacity: 1, duration: 1.5}, '<')
   allItems.forEach((item, index) => {
     const isLast = index === allItems.length - 1;
     mainTL.to(
