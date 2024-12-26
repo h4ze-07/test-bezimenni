@@ -9,26 +9,26 @@ function verticalSort() {
 }
 
 // lenis smoth scroll
-let lenDuration = 3;
-if (window.windowWidth >= 768) {
-    lenDuration = 3;
-}
-const lenis = new Lenis({
-    duration: lenDuration,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true,
-    direction: 'vertical',
-    smoothTouch: false,
-    touchMultiplier: 2,
-  });
+// let lenDuration = 3;
+// if (window.windowWidth >= 768) {
+//     lenDuration = 3;
+// }
+// const lenis = new Lenis({
+//     duration: lenDuration,
+//     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+//     smooth: true,
+//     direction: 'vertical',
+//     smoothTouch: false,
+//     touchMultiplier: 2,
+//   });
 
-function raf(time) {
-    lenis.raf(time);
-    ScrollTrigger.update();
-    requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
-lenis.on('scroll', ScrollTrigger.update);
+// function raf(time) {
+//     lenis.raf(time);
+//     ScrollTrigger.update();
+//     requestAnimationFrame(raf);
+// }
+// requestAnimationFrame(raf);
+// lenis.on('scroll', ScrollTrigger.update);
 
 // hero animations
 const heroSvgs = document.querySelectorAll('.hero-svg');
@@ -468,9 +468,5 @@ const contactsLinks = document.querySelectorAll('.contacts-link');
 if (contactsLinks) {
     initNavigation(contactsLinks, 'contacts')
 }
-
-lenis.on("scrollEnd", () => {
-	verticalSort()
-});
 
 ScrollTrigger.normalizeScroll(true);
