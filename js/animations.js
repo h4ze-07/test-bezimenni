@@ -92,7 +92,7 @@ const mainTL = gsap.timeline({
     scrollTrigger: {
         trigger: '.HAS-wrap',
         start: 'top top',
-        end: `+=${windowHeight * 6}`,
+        end: `+=${windowHeight * 3}`,
         // end: `+=${1000}`,
         pin: true,
         scrub: 1,
