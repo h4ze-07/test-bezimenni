@@ -177,7 +177,7 @@ mainTL
             y: 0,
             scale: 1.5,
             opacity: 1,
-            filter: 'blur(0px)',
+            // filter: 'blur(0px)',
             duration: animationDuration,
         },
         `step-${index}`
@@ -196,7 +196,7 @@ mainTL
             {
                 y: -step,
                 scale: 1,
-                filter: 'blur(3px)',
+                // filter: 'blur(3px)',
                 opacity: 0,
                 duration: animationDuration,
             },
@@ -224,243 +224,243 @@ mainTL
 });
 
 
-// // tabs
-// const tabsText = 'Наші кейси — це результат ретельного аналізу, творчого підходу та ефективної реалізації стратегій. Ми перетворюємо ідеї на реальні досягнення, які допомагають брендам розкривати свій потенціал у цифровому просторі. Ознайомтесь із нашими проєктами, щоб побачити, як ми вивели бізнеси на новий рівень.';
+// tabs
+const tabsText = 'Наші кейси — це результат ретельного аналізу, творчого підходу та ефективної реалізації стратегій. Ми перетворюємо ідеї на реальні досягнення, які допомагають брендам розкривати свій потенціал у цифровому просторі. Ознайомтесь із нашими проєктами, щоб побачити, як ми вивели бізнеси на новий рівень.';
 
-// function insertLetters() {
-//     const arr = tabsText.split('');
-//     const insertContainer = document.querySelector('.tabs-intro .text');
+function insertLetters() {
+    const arr = tabsText.split('');
+    const insertContainer = document.querySelector('.tabs-intro .text');
 
-//     arr.forEach( ch => {
-//         const el = `<span class="text-char">${ch}</span>`;
-//         insertContainer.insertAdjacentHTML('beforeend', el)
-//     })
-// }
-// insertLetters();
+    arr.forEach( ch => {
+        const el = `<span class="text-char">${ch}</span>`;
+        insertContainer.insertAdjacentHTML('beforeend', el)
+    })
+}
+insertLetters();
 
-// const introTextChars = document.querySelectorAll('.text-char');
-// if (introTextChars) {
-//     const textCharsTl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: '.tabs-intro .text',
-//             start: 'top 90%',
-//             end: 'top 20%',
-//             scrub: true,
-//         }
-//     })
+const introTextChars = document.querySelectorAll('.text-char');
+if (introTextChars) {
+    const textCharsTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.tabs-intro .text',
+            start: 'top 90%',
+            end: 'top 20%',
+            scrub: true,
+        }
+    })
 
-//     introTextChars.forEach( char => {
-//         textCharsTl
-//             .to(char, {
-//                 color: '#fff',
-//                 duration: 1,
-//             })
-//     })
-// }
+    introTextChars.forEach( char => {
+        textCharsTl
+            .to(char, {
+                color: '#fff',
+                duration: 1,
+            })
+    })
+}
 
-// const tabs = document.querySelectorAll('.tab');
-// if (tabs) {
-//     let activeTabIndex = 0;
+const tabs = document.querySelectorAll('.tab');
+if (tabs) {
+    let activeTabIndex = 0;
     
-//     tabs.forEach( (tab, ind) => {
-//         tab.addEventListener('click', () => {
-//             if (ind === activeTabIndex) {
-//                 return;
-//             } else {
-//                 tabs[activeTabIndex].classList.remove('active')
-//                 tabs[ind].classList.add('active')
-//                 activeTabIndex = ind;
-//             }
-//         })
-//     })
+    tabs.forEach( (tab, ind) => {
+        tab.addEventListener('click', () => {
+            if (ind === activeTabIndex) {
+                return;
+            } else {
+                tabs[activeTabIndex].classList.remove('active')
+                tabs[ind].classList.add('active')
+                activeTabIndex = ind;
+            }
+        })
+    })
 
-//     gsap.from(Array.from(tabs), {
-//         scrollTrigger: {
-//           trigger: tabs,
-//           start: "top 80%",
-//           end: "top 30%",
-//           scrub: true,
-//         },
-//         opacity: 0,
-//         duration: 0.8,
-//         stagger: 0.3,
-//       });
-// }
+    gsap.from(Array.from(tabs), {
+        scrollTrigger: {
+          trigger: tabs,
+          start: "top 80%",
+          end: "top 30%",
+          scrub: true,
+        },
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.3,
+      });
+}
 
-// const tabsIntroTitle = document.querySelector('.tabs-intro__title');
-// if (tabsIntroTitle) {
-//     gsap.from(tabsIntroTitle, {
-//         scrollTrigger: {
-//           trigger: tabsIntroTitle,
-//           start: "top 80%",
-//           end: "top 30%", 
-//           scrub: true, 
-//         },
-//         x: -100, 
-//         opacity: 0, 
-//         duration: 0.8,
-//       });
-// }
+const tabsIntroTitle = document.querySelector('.tabs-intro__title');
+if (tabsIntroTitle) {
+    gsap.from(tabsIntroTitle, {
+        scrollTrigger: {
+          trigger: tabsIntroTitle,
+          start: "top 80%",
+          end: "top 30%", 
+          scrub: true, 
+        },
+        x: -100, 
+        opacity: 0, 
+        duration: 0.8,
+      });
+}
 
-// const tabsIntroText = document.querySelector('.tabs-intro > .text');
-// if (tabsIntroText) {
-//     gsap.from(tabsIntroText, {
-//         scrollTrigger: {
-//           trigger: tabsIntroText,
-//           start: "top 80%",
-//           end: "top 40%", 
-//           scrub: true, 
-//         },
-//         y: 70, 
-//         opacity: 0, 
-//         duration: 0.5,
-//       });
-// }
+const tabsIntroText = document.querySelector('.tabs-intro > .text');
+if (tabsIntroText) {
+    gsap.from(tabsIntroText, {
+        scrollTrigger: {
+          trigger: tabsIntroText,
+          start: "top 80%",
+          end: "top 40%", 
+          scrub: true, 
+        },
+        y: 70, 
+        opacity: 0, 
+        duration: 0.5,
+      });
+}
 
-// // approach
-// function initApproachAnimations() {
-//     const approachCards = document.querySelectorAll('.approach__card');
-//     gsap.set(approachCards, { opacity: 0 });
-//     const animationEnd = windowWidth >= 768 ? (approachCards.length - 1) * 1000 
-//     : (approachCards.length - 1) * windowHeight;
+// approach
+function initApproachAnimations() {
+    const approachCards = document.querySelectorAll('.approach__card');
+    gsap.set(approachCards, { opacity: 0 });
+    const animationEnd = windowWidth >= 768 ? (approachCards.length - 1) * 1000 
+    : (approachCards.length - 1) * windowHeight;
 
-//     const appTimeline = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: '.approach__inner',
-//             start: 'top top',
-//             end: `+=${animationEnd}`,
-//             pin: true,
-//             scrub: true,
-//         },
-//     });
+    const appTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.approach__inner',
+            start: 'top top',
+            end: `+=${animationEnd}`,
+            pin: true,
+            scrub: true,
+        },
+    });
 
-//     approachCards.forEach((card, index) => {
-//         const img = card.querySelector('.approach__card-num');
-//         const cardPreTitle = card.querySelector('.approach__card-pre');
-//         const cardTitle = card.querySelector('.approach__card-title-text');
-//         const cardList = card.querySelectorAll('.approach__card-list > p');
+    approachCards.forEach((card, index) => {
+        const img = card.querySelector('.approach__card-num');
+        const cardPreTitle = card.querySelector('.approach__card-pre');
+        const cardTitle = card.querySelector('.approach__card-title-text');
+        const cardList = card.querySelectorAll('.approach__card-list > p');
 
-//         if (index === 0) {
-//     const firstTimeline = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: card,
-//             start: 'top 65%',
-//             end: 'top 20%',
-//             scrub: true,
-//             toggleActions: 'play reverse play reverse',
-//         },
-//     });
+        if (index === 0) {
+    const firstTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: card,
+            start: 'top 65%',
+            end: 'top 20%',
+            scrub: true,
+            toggleActions: 'play reverse play reverse',
+        },
+    });
 
-//     firstTimeline
-//         .to(card, { opacity: 1, duration: 0.1 })
-//         .from(img, { 
-//             y: 80, 
-//             opacity: 0, 
-//             duration: 0.7 
-//         })
-//         .from(cardTitle, { 
-//             x: -80, 
-//             opacity: 0, 
-//             duration: 0.7 
-//         }, '<')
-//         .from(cardPreTitle, { 
-//             x: -80, 
-//             opacity: 0, 
-//             duration: 0.7 
-//         }, '<')
-//         .from(cardList, {
-//             opacity: 0,
-//             duration: 0.5,
-//         }, '<');
+    firstTimeline
+        .to(card, { opacity: 1, duration: 0.1 })
+        .from(img, { 
+            y: 80, 
+            opacity: 0, 
+            duration: 0.7 
+        })
+        .from(cardTitle, { 
+            x: -80, 
+            opacity: 0, 
+            duration: 0.7 
+        }, '<')
+        .from(cardPreTitle, { 
+            x: -80, 
+            opacity: 0, 
+            duration: 0.7 
+        }, '<')
+        .from(cardList, {
+            opacity: 0,
+            duration: 0.5,
+        }, '<');
 
-//     appTimeline
-//         .to(cardList, { opacity: 0, duration: 0.5 })
-//         .to(cardTitle, { x: 80, opacity: 0, duration: 0.5 }, '<')
-//         .to(cardPreTitle, { x: 80, opacity: 0, duration: 0.5 }, '<')
-//         .to(img, { y: -80, opacity: 0, duration: 0.5 }, '<')
-//         .to(card, { opacity: 0, duration: 0.1 });
-// } else {
-//     appTimeline
-//         .to(card, { opacity: 1, duration: 0.1})
-//         .from(img, { y: 80, opacity: 0, duration: 0.7 })
-//         .from(cardTitle, { x: -80, opacity: 0, duration: 0.7 }, '<')
-//         .from(cardPreTitle, { x: -80, opacity: 0, duration: 0.7 }, '<')
-//         .from(cardList, {
-//             opacity: 0,
-//             duration: 0.5,
-//         }, '<');
-//     if (index !== approachCards.length - 1) {
-//         appTimeline
-//             .to(cardList, { opacity: 0, duration: 0.5 })
-//             .to(cardTitle, { x: 80, opacity: 0, duration: 0.5 }, '<')
-//             .to(cardPreTitle, { x: 80, opacity: 0, duration: 0.5 }, '<')
-//             .to(img, { y: -80, opacity: 0, duration: 0.5 }, '<')
-//             .to(card, { opacity: 0, duration: 0.1 });
-//     }
-// }
-//     });
-// }
-// initApproachAnimations()
-// // verticalSort();
+    appTimeline
+        .to(cardList, { opacity: 0, duration: 0.5 })
+        .to(cardTitle, { x: 80, opacity: 0, duration: 0.5 }, '<')
+        .to(cardPreTitle, { x: 80, opacity: 0, duration: 0.5 }, '<')
+        .to(img, { y: -80, opacity: 0, duration: 0.5 }, '<')
+        .to(card, { opacity: 0, duration: 0.1 });
+} else {
+    appTimeline
+        .to(card, { opacity: 1, duration: 0.1})
+        .from(img, { y: 80, opacity: 0, duration: 0.7 })
+        .from(cardTitle, { x: -80, opacity: 0, duration: 0.7 }, '<')
+        .from(cardPreTitle, { x: -80, opacity: 0, duration: 0.7 }, '<')
+        .from(cardList, {
+            opacity: 0,
+            duration: 0.5,
+        }, '<');
+    if (index !== approachCards.length - 1) {
+        appTimeline
+            .to(cardList, { opacity: 0, duration: 0.5 })
+            .to(cardTitle, { x: 80, opacity: 0, duration: 0.5 }, '<')
+            .to(cardPreTitle, { x: 80, opacity: 0, duration: 0.5 }, '<')
+            .to(img, { y: -80, opacity: 0, duration: 0.5 }, '<')
+            .to(card, { opacity: 0, duration: 0.1 });
+    }
+}
+    });
+}
+initApproachAnimations()
+// verticalSort();
 
-// // navigation controls
-// const initNavigation = (list, target, offset = 0) => {
-//     const targetSection = document.getElementById(target)
-//     list.forEach(item => {
-//         item.addEventListener('click', () => {
-//             lenis.scrollTo(targetSection, {
-//                 duration: 1.7,
-//                 offset: offset,
-//             });
-//         })
-//     })
-// }
+// navigation controls
+const initNavigation = (list, target, offset = 0) => {
+    const targetSection = document.getElementById(target)
+    list.forEach(item => {
+        item.addEventListener('click', () => {
+            lenis.scrollTo(targetSection, {
+                duration: 1.7,
+                offset: offset,
+            });
+        })
+    })
+}
 
-// const aboutLinks = document.querySelectorAll('.about-link');
-// if (aboutLinks) {
-//     let offset = -300;
-//     if (windowWidth >= 768) {
-//         offset = 300;
-//     }
-//     aboutLinks.forEach(item => {
-//         item.addEventListener('click', (e) => {
-//             e.preventDefault();
-//             lenis.scrollTo(windowHeight * 3, {
-//                 duration: 1.7,
-//                 offset: offset,
-//             });
-//         })
-//     })
-// }
-// const servicesLinks = document.querySelectorAll('.services-link');
-// if (servicesLinks) {
-//     let scrollPosition = windowWidth >= 768 ? windowHeight * 4.8  : windowHeight * 4.3;
-//     servicesLinks.forEach(item => {
-//         item.addEventListener('click', (e) => {
-//             e.preventDefault();
-//             lenis.scrollTo(scrollPosition, {
-//                 duration: 1.7,
-//             });
-//         })
-//     })
-// }
+const aboutLinks = document.querySelectorAll('.about-link');
+if (aboutLinks) {
+    let offset = -300;
+    if (windowWidth >= 768) {
+        offset = 300;
+    }
+    aboutLinks.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            lenis.scrollTo(windowHeight * 3, {
+                duration: 1.7,
+                offset: offset,
+            });
+        })
+    })
+}
+const servicesLinks = document.querySelectorAll('.services-link');
+if (servicesLinks) {
+    let scrollPosition = windowWidth >= 768 ? windowHeight * 4.8  : windowHeight * 4.3;
+    servicesLinks.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            lenis.scrollTo(scrollPosition, {
+                duration: 1.7,
+            });
+        })
+    })
+}
 
-// const tabsLinks = document.querySelectorAll('.tabs-link');
-// if (tabsLinks) {
-//     initNavigation(tabsLinks, 'tabs',-20)
-// }
+const tabsLinks = document.querySelectorAll('.tabs-link');
+if (tabsLinks) {
+    initNavigation(tabsLinks, 'tabs',-20)
+}
 
-// const approachLinks = document.querySelectorAll('.approach-link');
-// if (approachLinks) {
-//     initNavigation(approachLinks, 'approach')
-// }
+const approachLinks = document.querySelectorAll('.approach-link');
+if (approachLinks) {
+    initNavigation(approachLinks, 'approach')
+}
 
-// const faqLinks = document.querySelectorAll('.faq-link');
-// if (faqLinks) {
-//     initNavigation(faqLinks, 'faq')
-// }
+const faqLinks = document.querySelectorAll('.faq-link');
+if (faqLinks) {
+    initNavigation(faqLinks, 'faq')
+}
 
-// const contactsLinks = document.querySelectorAll('.contacts-link');
-// if (contactsLinks) {
-//     initNavigation(contactsLinks, 'contacts')
-// }
+const contactsLinks = document.querySelectorAll('.contacts-link');
+if (contactsLinks) {
+    initNavigation(contactsLinks, 'contacts')
+}

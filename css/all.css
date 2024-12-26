@@ -366,7 +366,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
 }
 .close-menu__btn {
     cursor: pointer;
@@ -553,7 +553,7 @@ body {
 	padding: 12px 24px;
 	border-radius: 48px;
 	border: 2px solid #fff;
-	mix-blend-mode: difference;
+	/* mix-blend-mode: difference; */
 	overflow: hidden;
     height: fit-content;
     width: fit-content;
